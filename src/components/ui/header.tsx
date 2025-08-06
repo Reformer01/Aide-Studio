@@ -76,13 +76,11 @@ function Header1() {
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     {item.href ? (
-                                        <>
-                                            <Link href={item.href} legacyBehavior passHref>
-                                                <NavigationMenuLink>
-                                                    <Button variant="ghost">{item.title}</Button>
-                                                </NavigationMenuLink>
-                                            </Link>
-                                        </>
+                                        <Link href={item.href} legacyBehavior={false} passHref>
+                                            <NavigationMenuLink asChild>
+                                                <Button variant="ghost">{item.title}</Button>
+                                            </NavigationMenuLink>
+                                        </Link>
                                     ) : (
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
@@ -103,7 +101,7 @@ function Header1() {
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
                                                         {item.items?.map((subItem) => (
-                                                             <Link href={subItem.href} legacyBehavior passHref key={subItem.title}>
+                                                             <Link href={subItem.href} legacyBehavior={false} passHref key={subItem.title}>
                                                                 <NavigationMenuLink
                                                                     className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
                                                                 >
