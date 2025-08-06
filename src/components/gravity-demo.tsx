@@ -6,12 +6,6 @@ import { Gravity, MatterBody } from "@/components/ui/gravity";
 function GravityDemo() {
   return (
     <div className="w-full h-full min-h-[500px] flex flex-col relative font-body">
-      <div className="pt-20 text-6xl sm:text-7xl md:text-8xl w-full text-center font-headline">
-        Grid Motion
-      </div>
-      <p className="pt-4 text-base sm:text-xl md:text-2xl w-full text-center">
-        components made with:
-      </p>
       <Gravity gravity={{ x: 0, y: 1 }} className="w-full h-full">
         <MatterBody
           matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}

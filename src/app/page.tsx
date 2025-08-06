@@ -1,10 +1,10 @@
 
-import GravityDemo from "@/components/gravity-demo";
+import { AnimatedGrid } from "@/components/animated-grid";
 
 export default function Home() {
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
-      <GravityDemo />
-    </main>
+    <div className="relative h-[calc(100vh-5rem)] w-full overflow-hidden bg-background">
+      <AnimatedGrid />
+    </div>
   );
 }
