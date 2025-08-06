@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Header1 } from '@/components/ui/header';
+import { Footerdemo } from '@/components/ui/footer-section';
 
 export const metadata: Metadata = {
   title: 'Firebase Studio App',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <Header1 />
         <main className="pt-20">{children}</main>
+        <Footerdemo />
       </body>
     </html>
   );
