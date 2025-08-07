@@ -2,7 +2,7 @@
  
 import { SunIcon as Sunburst } from "lucide-react";
 import { useState } from "react";
-
+import Link from "next/link";
  
 export const FullScreenSignup = () => {
   const [email, setEmail] = useState("");
@@ -143,10 +143,10 @@ export const FullScreenSignup = () => {
             </button>
  
             <div className="text-center text-gray-600 text-sm">
-              Already have account?{" "}
-              <a href="/sign-in" className="text-secondary-foreground font-medium underline">
+              Already have an account?{" "}
+              <Link href="/sign-in" className="font-medium text-primary hover:underline">
                 Login
-              </a>
+              </Link>
             </div>
           </form>
         </div>
