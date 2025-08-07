@@ -109,83 +109,83 @@ const Page = () => {
 
   return (
     <div className="h-screen w-[100%] bg-[var(--color-bg)] flex items-center justify-center p-4 text-[var(--color-text-primary)]">
-    <div className='card w-[80%] lg:w-[70%] md:w-[55%] flex justify-between h-[600px] bg-[var(--color-surface)] rounded-lg shadow-xl'>
-      <div
-        className='w-full lg:w-1/2 px-4 lg:px-16 left h-full relative overflow-hidden'
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
-          <div
-            className={`absolute pointer-events-none w-[500px] h-[500px] bg-gradient-to-r from-purple-300/30 via-blue-300/30 to-pink-300/30 rounded-full blur-3xl transition-opacity duration-200 ${
-              isHovering ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              transform: `translate(${mousePosition.x - 250}px, ${mousePosition.y - 250}px)`,
-              transition: 'transform 0.1s ease-out'
-            }}
-          />
-          <div className="form-container sign-in-container h-full z-10">
-            <form className='text-center py-10 md:py-20 grid gap-2 h-full' onSubmit={(e)=>{e.preventDefault();}}>
-              <div className='grid gap-4 md:gap-6 mb-2'>
-                <h1 className='text-3xl md:text-4xl font-extrabold text-[var(--color-heading)]' onClick={(e) => {e.preventDefault()}}>Sign in</h1>
-                <div className="social-container">
-                  <div className="flex items-center justify-center">
-                    <ul className="flex gap-3 md:gap-4">
-                      {socialIcons.map((social, index) => {
-                        return (
-                          <li key={index} className="list-none">
-                            <a
-                              href={social.href}
-                              className={`w-[2.5rem] md:w-[3rem] h-[2.5rem] md:h-[3rem] bg-[var(--color-bg-2)] rounded-full flex justify-center items-center relative z-[1] border-3 border-[var(--color-text-primary)] overflow-hidden group`}
-                            >
-                              <div
-                                className={`absolute inset-0 w-full h-full ${
-                                  social.gradient || social.bg
-                                } scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100`}
-                              />
-                              <span className="text-[1.5rem] text-[hsl(203,92%,8%)] transition-all duration-500 ease-in-out z-[2] group-hover:text-[var(--color-text-primary)] group-hover:rotate-y-360">
-                                {social.icon}
-                              </span>
-                            </a>
-                          </li>
-                        );
-                      })}
-                  </ul>
-                </div>
-              </div>
-              <span className='text-sm'>or use your account</span>
-            
-            <div className='grid gap-4 items-center'>
-                <AppInput placeholder="Email" type="email" />
-                <AppInput placeholder="Password" type="password" />
-              </div>
-              <a href="#" className='font-light text-sm md:text-md'>Forgot your password?</a>
-              <div className='flex gap-4 justify-center items-center'>
-                 <button 
-                  className="group/button relative inline-flex justify-center items-center overflow-hidden rounded-md bg-[var(--color-border)] px-4 py-1.5 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-text-primary)] cursor-pointer"
-                >
-                <span className="text-sm px-2 py-1">Sign In</span>
-                <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-                  <div className="relative h-full w-8 bg-white/20" />
-                </div>
-              </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className='hidden lg:block w-1/2 right h-full overflow-hidden rounded-r-lg'>
-            <Image
-              src='https://images.pexels.com/photos/7102037/pexels-photo-7102037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-              loader={({ src }) => src}
-              width={1000}
-              height={1000}
-              priority
-              alt="A person using a futuristic interface"
-              data-ai-hint="futuristic interface"
-              className="w-full h-full object-cover opacity-80"
+      <div className='card w-[80%] lg:w-[70%] md:w-[55%] flex justify-between h-[600px] bg-[var(--color-surface)] rounded-lg shadow-xl'>
+        <div
+          className='w-full lg:w-1/2 px-4 lg:px-16 left h-full relative overflow-hidden'
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}>
+            <div
+              className={`absolute pointer-events-none w-[500px] h-[500px] bg-gradient-to-r from-purple-300/30 via-blue-300/30 to-pink-300/30 rounded-full blur-3xl transition-opacity duration-200 ${
+                isHovering ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                transform: `translate(${mousePosition.x - 250}px, ${mousePosition.y - 250}px)`,
+                transition: 'transform 0.1s ease-out'
+              }}
             />
-       </div>
-      </div>
+            <div className="form-container sign-in-container h-full z-10">
+              <form className='text-center py-10 md:py-20 grid gap-2 h-full' onSubmit={(e)=>{e.preventDefault();}}>
+                <div className='grid gap-4 md:gap-6 mb-2'>
+                  <h1 className='text-3xl md:text-4xl font-extrabold text-[var(--color-heading)]' onClick={(e) => {e.preventDefault()}}>Sign in</h1>
+                  <div className="social-container">
+                    <div className="flex items-center justify-center">
+                      <ul className="flex gap-3 md:gap-4">
+                        {socialIcons.map((social, index) => {
+                          return (
+                            <li key={index} className="list-none">
+                              <a
+                                href={social.href}
+                                className={`w-[2.5rem] md:w-[3rem] h-[2.5rem] md:h-[3rem] bg-[var(--color-bg-2)] rounded-full flex justify-center items-center relative z-[1] border-3 border-[var(--color-text-primary)] overflow-hidden group`}
+                              >
+                                <div
+                                  className={`absolute inset-0 w-full h-full ${
+                                    social.gradient || social.bg
+                                  } scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100`}
+                                />
+                                <span className="text-[1.5rem] text-[hsl(203,92%,8%)] transition-all duration-500 ease-in-out z-[2] group-hover:text-[var(--color-text-primary)] group-hover:rotate-y-360">
+                                  {social.icon}
+                                </span>
+                              </a>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  </div>
+                </div>
+                <span className='text-sm'>or use your account</span>
+              </div>
+              <div className='grid gap-4 items-center'>
+                  <AppInput placeholder="Email" type="email" />
+                  <AppInput placeholder="Password" type="password" />
+                </div>
+                <a href="#" className='font-light text-sm md:text-md'>Forgot your password?</a>
+                <div className='flex gap-4 justify-center items-center'>
+                   <button 
+                    className="group/button relative inline-flex justify-center items-center overflow-hidden rounded-md bg-[var(--color-border)] px-4 py-1.5 text-xs font-normal text-white transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-text-primary)] cursor-pointer"
+                  >
+                  <span className="text-sm px-2 py-1">Sign In</span>
+                  <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+                    <div className="relative h-full w-8 bg-white/20" />
+                  </div>
+                </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className='hidden lg:block w-1/2 right h-full overflow-hidden rounded-r-lg'>
+              <Image
+                src='https://images.pexels.com/photos/7102037/pexels-photo-7102037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+                loader={({ src }) => src}
+                width={1000}
+                height={1000}
+                priority
+                alt="A person using a futuristic interface"
+                data-ai-hint="futuristic interface"
+                className="w-full h-full object-cover opacity-80"
+              />
+         </div>
+        </div>
     </div>
   )
 }
