@@ -128,7 +128,9 @@ function Header1() {
                         <Link href="/sign-in">Sign In</Link>
                     </Button>
                     <div className="border-r hidden md:inline"></div>
-                    <Button>Sign Up</Button>
+                    <Button asChild>
+                      <Link href="/sign-up">Sign Up</Link>
+                    </Button>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
