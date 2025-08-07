@@ -4,10 +4,10 @@ function GravityDemo() {
   return (
     <div className="w-full h-full min-h-[500px] flex flex-col relative font-azeretMono">
       <div className="pt-20 text-6xl sm:text-7xl md:text-8xl text-black dark:text-white w-full text-center font-calendas italic">
-        fancy
+        Aide
       </div>
       <p className="pt-4 text-base sm:text-xl md:text-2xl text-black dark:text-white w-full text-center">
-        components made with:
+        Your new AI-powered assistant.
       </p>
       <Gravity gravity={{ x: 0, y: 1 }} className="w-full h-full">
         <MatterBody
@@ -16,7 +16,7 @@ function GravityDemo() {
           y="10%"
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-[#0015ff] text-white rounded-full hover:cursor-pointer px-8 py-4">
-            react
+            Smarter
           </div>
         </MatterBody>
         <MatterBody
@@ -25,7 +25,7 @@ function GravityDemo() {
           y="30%"
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-[#E794DA] text-white rounded-full hover:cursor-grab px-8 py-4 ">
-            typescript
+            Faster
           </div>
         </MatterBody>
         <MatterBody
@@ -35,7 +35,7 @@ function GravityDemo() {
           angle={10}
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-[#1f464d]  text-white rounded-full hover:cursor-grab px-8 py-4 ">
-            motion
+            Friendlier
           </div>
         </MatterBody>
         <MatterBody
@@ -44,7 +44,7 @@ function GravityDemo() {
           y="10%"
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-[#ff5941]  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
-            tailwind
+            Helpful
           </div>
         </MatterBody>
         <MatterBody
@@ -53,7 +53,7 @@ function GravityDemo() {
           y="20%"
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-orange-500  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
-            drei
+            Creative
           </div>
         </MatterBody>
         <MatterBody
@@ -62,7 +62,7 @@ function GravityDemo() {
           y="10%"
         >
           <div className="text-xl sm:text-2xl md:text-3xl bg-[#ffd726]  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
-            matter-js
+            Always on
           </div>
         </MatterBody>
       </Gravity>

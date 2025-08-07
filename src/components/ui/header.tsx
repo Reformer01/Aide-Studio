@@ -21,45 +21,45 @@ function Header1() {
             description: "",
         },
         {
-            title: "Product",
-            description: "Managing a small business today is already tough.",
+            title: "Features",
+            description: "Discover what Aide can do for you.",
             items: [
                 {
-                    title: "Reports",
-                    href: "/reports",
+                    title: "Conversational AI",
+                    href: "/features/conversational-ai",
                 },
                 {
-                    title: "Statistics",
-                    href: "/statistics",
+                    title: "Content Generation",
+                    href: "/features/content-generation",
                 },
                 {
-                    title: "Dashboards",
-                    href: "/dashboards",
+                    title: "Data Analysis",
+                    href: "/features/data-analysis",
                 },
                 {
-                    title: "Recordings",
-                    href: "/recordings",
+                    title: "Code Assistance",
+                    href: "/features/code-assistance",
                 },
             ],
         },
         {
-            title: "Company",
-            description: "Managing a small business today is already tough.",
+            title: "About",
+            description: "Learn more about the team and technology behind Aide.",
             items: [
                 {
-                    title: "About us",
-                    href: "/about",
+                    title: "Our Mission",
+                    href: "/about/mission",
                 },
                 {
-                    title: "Fundraising",
-                    href: "/fundraising",
+                    title: "Team",
+                    href: "/about/team",
                 },
                 {
-                    title: "Investors",
-                    href: "/investors",
+                    title: "Careers",
+                    href: "/about/careers",
                 },
                 {
-                    title: "Contact us",
+                    title: "Contact Us",
                     href: "/contact",
                 },
             ],
@@ -96,7 +96,7 @@ function Header1() {
                                                             </p>
                                                         </div>
                                                         <Button size="sm" className="mt-10">
-                                                            Book a call today
+                                                            Get Started
                                                         </Button>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
@@ -121,15 +121,14 @@ function Header1() {
                     </NavigationMenu>
                 </div>
                 <div className="flex lg:justify-center">
-                    <p className="font-semibold">Grid Motion</p>
+                    <p className="font-semibold">Aide</p>
                 </div>
                 <div className="flex justify-end w-full gap-4">
                     <Button variant="ghost" className="hidden md:inline">
-                        Book a demo
+                        Sign In
                     </Button>
                     <div className="border-r hidden md:inline"></div>
-                    <Button variant="outline">Sign in</Button>
-                    <Button>Get started</Button>
+                    <Button>Sign Up</Button>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>

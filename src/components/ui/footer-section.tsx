@@ -31,9 +31,9 @@ function Footerdemo() {
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay Connected</h2>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight">Get Started with Aide</h2>
             <p className="mb-6 text-muted-foreground">
-              Join our newsletter for the latest updates and exclusive offers.
+              Sign up for our newsletter to get the latest updates.
             </p>
             <form className="relative">
               <Input
@@ -53,32 +53,32 @@ function Footerdemo() {
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <h3 className="mb-4 text-lg font-semibold">Aide</h3>
             <nav className="space-y-2 text-sm">
               <a href="#" className="block transition-colors hover:text-primary">
                 Home
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                About Us
+                Features
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Services
+                Pricing
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Products
+                About
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Contact
+                Sign Up
               </a>
             </nav>
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
+              <p>123 AI Avenue</p>
+              <p>Innovate City, IC 54321</p>
               <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
+              <p>Email: hello@aide.com</p>
             </address>
           </div>
           <div className="relative">
@@ -153,7 +153,7 @@ function Footerdemo() {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Your Company. All rights reserved.
+            © 2024 Aide. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
             <a href="#" className="transition-colors hover:text-primary">
@@ -162,8 +162,8 @@ function Footerdemo() {
             <a href="#" className="transition-colors hover:text-primary">
               Terms of Service
             </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Cookie Settings
+            <a href="#" className="block transition-colors hover:text-primary">
+              Contact
             </a>
           </nav>
         </div>
