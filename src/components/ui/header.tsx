@@ -124,8 +124,8 @@ function Header1() {
                     <p className="font-semibold">Aide</p>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button variant="ghost" className="hidden md:inline">
-                        Sign In
+                    <Button asChild variant="ghost" className="hidden md:inline">
+                        <Link href="/sign-in">Sign In</Link>
                     </Button>
                     <div className="border-r hidden md:inline"></div>
                     <Button>Sign Up</Button>
