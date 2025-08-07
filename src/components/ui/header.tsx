@@ -25,20 +25,20 @@ function Header1() {
             description: "Discover what Aide can do for you.",
             items: [
                 {
-                    title: "Conversational AI",
-                    href: "/features/conversational-ai",
+                    title: "Weather Information",
+                    href: "/features/weather",
                 },
                 {
-                    title: "Content Generation",
-                    href: "/features/content-generation",
+                    title: "Document Management",
+                    href: "/features/documents",
                 },
                 {
-                    title: "Data Analysis",
-                    href: "/features/data-analysis",
+                    title: "Content Creation",
+                    href: "/features/content",
                 },
                 {
-                    title: "Code Assistance",
-                    href: "/features/code-assistance",
+                    title: "Productivity",
+                    href: "/features/productivity",
                 },
             ],
         },
