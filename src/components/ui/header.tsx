@@ -40,6 +40,10 @@ function Header1() {
                     title: "Productivity",
                     href: "/features/productivity",
                 },
+                {
+                    title: "Loading",
+                    href: "/loading",
+                },
             ],
         },
         {
@@ -124,8 +128,8 @@ function Header1() {
                     <p className="font-semibold">Aide</p>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button asChild variant="ghost" className="hidden md:inline">
-                        <Link href="/sign-in">Sign In</Link>
+                    <Button asChild>
+                      <Link href="/sign-in">Sign In</Link>
                     </Button>
                     <div className="border-r hidden md:inline"></div>
                     <Button asChild>
