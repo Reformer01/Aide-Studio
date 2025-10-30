@@ -62,7 +62,7 @@ export const FullScreenSignup = () => {
           <div className="h-[40rem] z-2 w-[4rem] bg-linear-90 from-[#ffffff00] via-[#000000] via-[69%] to-[#ffffff30]  opacity-30 overflow-hidden"></div>
           <div className="h-[40rem] z-2 w-[4rem] bg-linear-90 from-[#ffffff00] via-[#000000] via-[69%] to-[#ffffff30]  opacity-30 overflow-hidden"></div>
         </div>
-        <div className="w-[15rem] h-[15rem] bg-orange-500 absolute z-1 rounded-full bottom-0"></div>
+        <div className="w-[15rem] h-[15rem] bg-black absolute z-1 rounded-full bottom-0"></div>
         <div className="w-[8rem] h-[5rem] bg-white absolute z-1 rounded-full bottom-0"></div>
         <div className="w-[8rem] h-[5rem] bg-white absolute z-1 rounded-full bottom-0"></div>
  
@@ -74,7 +74,7 @@ export const FullScreenSignup = () => {
  
         <div className="p-8 md:p-12 md:w-1/2 flex flex-col bg-secondary z-99 text-secondary-foreground ">
           <div className="flex flex-col items-left mb-8">
-            <div className="text-orange-500 mb-4">
+            <div className="text-black dark:text-white mb-4">
               <Sunburst className="h-10 w-10" />
             </div>
             <h2 className="text-3xl font-medium mb-2 tracking-tight">
@@ -98,8 +98,8 @@ export const FullScreenSignup = () => {
                 type="email"
                 id="email"
                 placeholder="hi@aide.com"
-                className={`text-sm w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-1 bg-white text-black focus:ring-orange-500 ${
-                  emailError ? "border-red-500" : "border-gray-300"
+                className={`text-sm w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-1 bg-white text-black focus:ring-black ${
+                  emailError ? "border-destructive" : "border-gray-300"
                 }`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -107,7 +107,7 @@ export const FullScreenSignup = () => {
                 aria-describedby="email-error"
               />
               {emailError && (
-                <p id="email-error" className="text-red-500 text-xs mt-1">
+                <p id="email-error" className="text-destructive text-xs mt-1">
                   {emailError}
                 </p>
               )}
@@ -120,8 +120,8 @@ export const FullScreenSignup = () => {
               <input
                 type="password"
                 id="password"
-                className={`text-sm w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-1 bg-white text-black focus:ring-orange-500 ${
-                  passwordError ? "border-red-500" : "border-gray-300"
+                className={`text-sm w-full py-2 px-3 border rounded-lg focus:outline-none focus:ring-1 bg-white text-black focus:ring-black ${
+                  passwordError ? "border-destructive" : "border-gray-300"
                 }`}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -129,7 +129,7 @@ export const FullScreenSignup = () => {
                 aria-describedby="password-error"
               />
               {passwordError && (
-                <p id="password-error" className="text-red-500 text-xs mt-1">
+                <p id="password-error" className="text-destructive text-xs mt-1">
                   {passwordError}
                 </p>
               )}
@@ -137,7 +137,7 @@ export const FullScreenSignup = () => {
  
             <button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+              className="w-full bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded-lg transition-colors"
             >
               Create a new account
             </button>

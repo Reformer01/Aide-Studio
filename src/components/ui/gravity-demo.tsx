@@ -15,7 +15,7 @@ function GravityDemo() {
           x="30%"
           y="10%"
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-[#0015ff] text-white rounded-full hover:cursor-pointer px-8 py-4">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-pointer px-8 py-4">
             Smarter
           </div>
         </MatterBody>
@@ -24,7 +24,7 @@ function GravityDemo() {
           x="30%"
           y="30%"
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-[#E794DA] text-white rounded-full hover:cursor-grab px-8 py-4 ">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-grab px-8 py-4 ">
             Faster
           </div>
         </MatterBody>
@@ -34,7 +34,7 @@ function GravityDemo() {
           y="20%"
           angle={10}
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-[#1f464d]  text-white rounded-full hover:cursor-grab px-8 py-4 ">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-grab px-8 py-4 ">
             Friendlier
           </div>
         </MatterBody>
@@ -43,7 +43,7 @@ function GravityDemo() {
           x="75%"
           y="10%"
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-[#ff5941]  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-grab px-8 py-4 ">
             Helpful
           </div>
         </MatterBody>
@@ -52,7 +52,7 @@ function GravityDemo() {
           x="80%"
           y="20%"
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-orange-500  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-grab px-8 py-4 ">
             Creative
           </div>
         </MatterBody>
@@ -61,7 +61,7 @@ function GravityDemo() {
           x="50%"
           y="10%"
         >
-          <div className="text-xl sm:text-2xl md:text-3xl bg-[#ffd726]  text-white [#E794DA] rounded-full hover:cursor-grab px-8 py-4 ">
+          <div className="text-xl sm:text-2xl md:text-3xl bg-black text-white dark:bg-white dark:text-black rounded-full hover:cursor-grab px-8 py-4 ">
             Always on
           </div>
         </MatterBody>
