@@ -24,6 +24,7 @@ function Header1() {
             title: "Features",
             href: "/features",
             description: "Discover what Aide can do for you.",
+            useLoader: true, // Apply loader to this link
             items: [
                 {
                     title: "AI Chat",
@@ -40,11 +41,6 @@ function Header1() {
                 {
                     title: "Productivity Tools",
                     href: "/features",
-                },
-                {
-                    title: "Loading Example",
-                    href: "/loading",
-                    useLoader: true,
                 },
             ],
         },
@@ -98,18 +94,22 @@ function Header1() {
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} legacyBehavior passHref>
-                                                <NavigationMenuLink asChild>
-                                                    <Button variant="ghost">{item.title}</Button>
-                                                </NavigationMenuLink>
+                                            <Link href={item.href} passHref>
+                                                <Button variant="ghost">{item.title}</Button>
                                             </Link>
                                         )
                                     ) : (
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
-                                                <Link href={item.href || '#'} passHref>
-                                                    {item.title}
-                                                </Link>
+                                                {item.useLoader ? (
+                                                    <LoadingLink href={item.href || '#'}>
+                                                        {item.title}
+                                                    </LoadingLink>
+                                                ) : (
+                                                    <Link href={item.href || '#'} passHref>
+                                                        {item.title}
+                                                    </Link>
+                                                )}
                                             </NavigationMenuTrigger>
                                             <NavigationMenuContent className="!w-[450px] p-4">
                                                 <div className="flex flex-col lg:grid grid-cols-2 gap-4">
