@@ -5,10 +5,11 @@ import { useRouter } from 'next/navigation';
 import React, { ComponentProps, PropsWithChildren, useState } from 'react';
 import TetrisLoading from './tetris-loader';
 import { Slot } from '@radix-ui/react-slot';
+import { cn } from '@/lib/utils';
 
-type LoadingLinkProps = ComponentProps<typeof Link> & { asChild?: boolean };
+type LoadingLinkProps = ComponentProps<typeof Link> & { asChild?: boolean, className?: string };
 
-export function LoadingLink({ href, onClick, children, asChild, ...props }: PropsWithChildren<LoadingLinkProps>) {
+export function LoadingLink({ href, onClick, children, asChild, className, ...props }: PropsWithChildren<LoadingLinkProps>) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,16 +34,14 @@ export function LoadingLink({ href, onClick, children, asChild, ...props }: Prop
       </div>
     );
   }
-
-  const Comp = asChild ? Slot : "a";
+  
+  const Comp = asChild ? Slot : 'a';
 
   return (
-    <Link
-      href={href}
-      {...props}
-      onClick={handleClick}
-    >
-      <Comp {...props}>{children}</Comp>
+    <Link href={href} onClick={handleClick} {...props} passHref>
+      <Comp className={cn(className)} {...props}>
+          {children}
+      </Comp>
     </Link>
   );
 }
