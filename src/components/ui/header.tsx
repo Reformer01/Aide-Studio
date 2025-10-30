@@ -47,6 +47,11 @@ function Header1() {
             ],
         },
         {
+            title: "Pricing",
+            href: "/pricing",
+            description: "Find the perfect plan for your needs.",
+        },
+        {
             title: "About",
             description: "Learn more about the team and technology behind Aide.",
             items: [
