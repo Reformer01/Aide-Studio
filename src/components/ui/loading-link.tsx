@@ -14,7 +14,7 @@ export function LoadingLink({ href, ...props }: PropsWithChildren<LoadingLinkPro
     router.push('/loading');
     setTimeout(() => {
       router.push(href.toString());
-    }, 1000); 
+    }, 750); 
   };
 
   return (
