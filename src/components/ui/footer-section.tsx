@@ -13,6 +13,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Facebook, Instagram, Linkedin, Moon, Send, Sun, Twitter } from "lucide-react"
+import Link from "next/link"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)
@@ -55,21 +56,21 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Aide</h3>
             <nav className="space-y-2 text-sm">
-              <a href="#" className="block transition-colors hover:text-primary">
+              <Link href="/" className="block transition-colors hover:text-primary">
                 Home
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link href="/" className="block transition-colors hover:text-primary">
                 Features
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link href="/pricing" className="block transition-colors hover:text-primary">
                 Pricing
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link href="/" className="block transition-colors hover:text-primary">
                 About
-              </a>
-              <a href="#" className="block transition-colors hover:text-primary">
+              </Link>
+              <Link href="/sign-up" className="block transition-colors hover:text-primary">
                 Sign Up
-              </a>
+              </Link>
             </nav>
           </div>
           <div>
@@ -156,15 +157,15 @@ function Footerdemo() {
             © 2024 Aide. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
+            <Link href="#" className="transition-colors hover:text-primary">
               Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
+            </Link>
+            <Link href="#" className="transition-colors hover:text-primary">
               Terms of Service
-            </a>
-            <a href="#" className="block transition-colors hover:text-primary">
+            </Link>
+            <Link href="#" className="block transition-colors hover:text-primary">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

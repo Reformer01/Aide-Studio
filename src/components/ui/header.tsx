@@ -12,6 +12,7 @@ import {
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { LoadingLink } from "./loading-link";
 
 function Header1() {
     const navigationItems = [
@@ -26,23 +27,24 @@ function Header1() {
             items: [
                 {
                     title: "AI Chat",
-                    href: "/features/chat",
+                    href: "/",
                 },
                 {
                     title: "Document Analysis",
-                    href: "/features/documents",
+                    href: "/",
                 },
                 {
                     title: "Content Generation",
-                    href: "/features/content",
+                    href: "/",
                 },
                 {
                     title: "Productivity Tools",
-                    href: "/features/productivity",
+                    href: "/",
                 },
                 {
                     title: "Loading",
                     href: "/loading",
+                    useLoader: true,
                 },
             ],
         },
@@ -57,19 +59,19 @@ function Header1() {
             items: [
                 {
                     title: "Our Mission",
-                    href: "/about/mission",
+                    href: "/",
                 },
                 {
                     title: "Team",
-                    href: "/about/team",
+                    href: "/",
                 },
                 {
                     title: "Careers",
-                    href: "/about/careers",
+                    href: "/",
                 },
                 {
                     title: "Contact Us",
-                    href: "/contact",
+                    href: "/",
                 },
             ],
         },
@@ -110,14 +112,21 @@ function Header1() {
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
                                                         {item.items?.map((subItem) => (
-                                                             <Link href={subItem.href} legacyBehavior={false} passHref key={subItem.title}>
-                                                                <NavigationMenuLink
-                                                                    className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
-                                                                >
+                                                            subItem.useLoader ? (
+                                                                <LoadingLink href={subItem.href} key={subItem.title} className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded">
                                                                     <span>{subItem.title}</span>
                                                                     <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                                </NavigationMenuLink>
-                                                            </Link>
+                                                                </LoadingLink>
+                                                            ) : (
+                                                                 <Link href={subItem.href} legacyBehavior={false} passHref key={subItem.title}>
+                                                                    <NavigationMenuLink
+                                                                        className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
+                                                                    >
+                                                                        <span>{subItem.title}</span>
+                                                                        <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                                                    </NavigationMenuLink>
+                                                                </Link>
+                                                            )
                                                         ))}
                                                     </div>
                                                 </div>
@@ -163,16 +172,29 @@ function Header1() {
                                         )}
                                         {item.items &&
                                             item.items.map((subItem) => (
-                                                <Link
-                                                    key={subItem.title}
-                                                    href={subItem.href}
-                                                    className="flex justify-between items-center"
-                                                >
-                                                    <span className="text-muted-foreground">
-                                                        {subItem.title}
-                                                    </span>
-                                                    <MoveRight className="w-4 h-4 stroke-1" />
-                                                </Link>
+                                                subItem.useLoader ? (
+                                                    <LoadingLink
+                                                        key={subItem.title}
+                                                        href={subItem.href}
+                                                        className="flex justify-between items-center"
+                                                    >
+                                                        <span className="text-muted-foreground">
+                                                            {subItem.title}
+                                                        </span>
+                                                        <MoveRight className="w-4 h-4 stroke-1" />
+                                                    </LoadingLink>
+                                                ) : (
+                                                    <Link
+                                                        key={subItem.title}
+                                                        href={subItem.href}
+                                                        className="flex justify-between items-center"
+                                                    >
+                                                        <span className="text-muted-foreground">
+                                                            {subItem.title}
+                                                        </span>
+                                                        <MoveRight className="w-4 h-4 stroke-1" />
+                                                    </Link>
+                                                )
                                             ))}
                                     </div>
                                 </div>

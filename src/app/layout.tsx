@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Header1 } from '@/components/ui/header';
 import { Footerdemo } from '@/components/ui/footer-section';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Aide - Your AI Assistant',
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header1 />
         <main className="pt-20">{children}</main>
         <Footerdemo />
+        <Toaster />
       </body>
     </html>
   );
