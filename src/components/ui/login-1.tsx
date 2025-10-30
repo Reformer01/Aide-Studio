@@ -172,7 +172,6 @@ const LoginComponent = () => {
                 <div className="flex justify-between items-center text-sm">
                   <a href="#" className='font-light text-sm md:text-md'>Forgot your password?</a>
                 </div>
-
                 <div className='flex flex-col gap-4 justify-center items-center'>
                    <Button 
                     className="w-full"
