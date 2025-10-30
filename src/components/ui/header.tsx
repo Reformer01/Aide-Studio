@@ -90,26 +90,20 @@ function Header1() {
                                 <NavigationMenuItem key={item.title}>
                                     {item.href && !item.items ? (
                                         item.useLoader ? (
-                                            <LoadingLink href={item.href}>
+                                            <LoadingLink href={item.href} asChild>
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href}>
+                                            <Link href={item.href} asChild>
                                                 <Button variant="ghost">{item.title}</Button>
                                             </Link>
                                         )
                                     ) : (
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
-                                                {item.useLoader ? (
-                                                    <LoadingLink href={item.href || '#'}>
-                                                        {item.title}
-                                                    </LoadingLink>
-                                                ) : (
-                                                    <Link href={item.href || '#'}>
-                                                        {item.title}
-                                                    </Link>
-                                                )}
+                                                <Link href={item.href || '#'}>
+                                                    {item.title}
+                                                </Link>
                                             </NavigationMenuTrigger>
                                             <NavigationMenuContent className="!w-[450px] p-4">
                                                 <div className="flex flex-col lg:grid grid-cols-2 gap-4">
@@ -120,8 +114,8 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Link href="/sign-up">
-                                                            <Button size="sm" className="mt-10">Start for Free</Button>
+                                                        <Link href="/sign-up" asChild>
+                                                          <Button size="sm" className="mt-10">Start for Free</Button>
                                                         </Link>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
@@ -149,11 +143,11 @@ function Header1() {
                     <Link href="/" className="font-semibold">Aide</Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Link href="/sign-in">
+                    <Link href="/sign-in" asChild>
                       <Button>Sign In</Button>
                     </Link>
                     <div className="border-r hidden md:inline"></div>
-                    <Link href="/sign-up">
+                    <Link href="/sign-up" asChild>
                       <Button>Sign Up</Button>
                     </Link>
                 </div>
