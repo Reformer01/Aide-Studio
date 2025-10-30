@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { Textarea } from "@/components/ui/textarea"
 import {
   Tooltip,
   TooltipContent,
@@ -17,7 +16,6 @@ import Link from "next/link"
 
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true)
-  const [isChatOpen, setIsChatOpen] = React.useState(false)
 
   React.useEffect(() => {
     if (isDarkMode) {
@@ -157,12 +155,6 @@ function Footerdemo() {
             © 2024 Aide. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <Link href="#" className="transition-colors hover:text-primary">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="transition-colors hover:text-primary">
-              Terms of Service
-            </Link>
             <Link href="/about" className="block transition-colors hover:text-primary">
               Contact
             </Link>

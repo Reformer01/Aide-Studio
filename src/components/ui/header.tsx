@@ -14,7 +14,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { LoadingLink } from "./loading-link";
 import { cn } from "@/lib/utils";
-import { navigationMenuTriggerStyle } from "./navigation-menu";
 
 function Header1() {
     const navigationItems = [
@@ -27,24 +26,6 @@ function Header1() {
             href: "/features",
             description: "Discover what Aide can do for you.",
             useLoader: true,
-            items: [
-                {
-                    title: "AI Chat",
-                    href: "/features",
-                },
-                {
-                    title: "Document Analysis",
-                    href: "/features",
-                },
-                {
-                    title: "Content Generation",
-                    href: "/features",
-                },
-                {
-                    title: "Productivity Tools",
-                    href: "/features",
-                },
-            ],
         },
         {
             title: "Pricing",
@@ -55,24 +36,6 @@ function Header1() {
             title: "About",
             href: "/about",
             description: "Learn more about the team and technology behind Aide.",
-            items: [
-                {
-                    title: "Our Mission",
-                    href: "/about",
-                },
-                {
-                    title: "Team",
-                    href: "/about",
-                },
-                {
-                    title: "Careers",
-                    href: "/about",
-                },
-                {
-                    title: "Contact Us",
-                    href: "/about",
-                },
-            ],
         },
     ];
 
@@ -90,51 +53,14 @@ function Header1() {
                         <NavigationMenuList className="flex justify-start gap-4 flex-row">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
-                                    {item.href && !item.items ? (
-                                        item.useLoader ? (
-                                            <LoadingLink href={item.href} asChild>
-                                                <Button variant="ghost">{item.title}</Button>
-                                            </LoadingLink>
-                                        ) : (
-                                            <Link href={item.href} asChild>
-                                                <Button variant="ghost">{item.title}</Button>
-                                            </Link>
-                                        )
+                                    {item.useLoader ? (
+                                        <LoadingLink href={item.href} onClick={handleLinkClick} asChild>
+                                            <Button variant="ghost">{item.title}</Button>
+                                        </LoadingLink>
                                     ) : (
-                                        <>
-                                            <NavigationMenuTrigger>
-                                                <Link href={item.href || '#'}>
-                                                    {item.title}
-                                                </Link>
-                                            </NavigationMenuTrigger>
-                                            <NavigationMenuContent className="!w-[450px] p-4">
-                                                <div className="flex flex-col lg:grid grid-cols-2 gap-4">
-                                                    <div className="flex flex-col h-full justify-between">
-                                                        <div className="flex flex-col">
-                                                            <p className="text-base">{item.title}</p>
-                                                            <p className="text-muted-foreground text-sm">
-                                                                {item.description}
-                                                            </p>
-                                                        </div>
-                                                        <Link href="/sign-up" asChild>
-                                                          <Button size="sm" className="mt-10">Start for Free</Button>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="flex flex-col text-sm h-full justify-end">
-                                                        {item.items?.map((subItem) => (
-                                                            <Link
-                                                                href={subItem.href}
-                                                                key={subItem.title}
-                                                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
-                                                            >
-                                                                <span>{subItem.title}</span>
-                                                                <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                            </Link>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </NavigationMenuContent>
-                                        </>
+                                        <Link href={item.href} asChild>
+                                            <Button variant="ghost">{item.title}</Button>
+                                        </Link>
                                     )}
                                 </NavigationMenuItem>
                             ))}
@@ -142,7 +68,7 @@ function Header1() {
                     </NavigationMenu>
                 </div>
                 <div className="flex lg:justify-center">
-                    <Link href="/">
+                    <Link href="/" asChild>
                         <Button variant="link" className="font-semibold">Aide</Button>
                     </Link>
                 </div>
@@ -164,7 +90,7 @@ function Header1() {
                             {navigationItems.map((item) => (
                                 <div key={item.title}>
                                     <div className="flex flex-col gap-2">
-                                        {item.href && !item.items ? (
+                                        {item.href && (
                                             item.useLoader ? (
                                                 <LoadingLink
                                                     href={item.href}
@@ -184,23 +110,7 @@ function Header1() {
                                                     <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
                                                 </Link>
                                             )
-                                        ) : (
-                                            <p className="text-lg">{item.title}</p>
                                         )}
-                                        {item.items &&
-                                            item.items.map((subItem) => (
-                                                <Link
-                                                    key={subItem.title}
-                                                    href={subItem.href}
-                                                    className="flex justify-between items-center"
-                                                    onClick={handleLinkClick}
-                                                >
-                                                    <span className="text-muted-foreground">
-                                                        {subItem.title}
-                                                    </span>
-                                                    <MoveRight className="w-4 h-4 stroke-1" />
-                                                </Link>
-                                            ))}
                                     </div>
                                 </div>
                             ))}
