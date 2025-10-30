@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 export const LightLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 relative">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-4">
+      <div className="w-full max-w-md bg-white dark:bg-black rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800 relative">
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-blue-100 via-blue-50 to-transparent opacity-40 blur-3xl -mt-20"></div>
         <div className="p-8">
           <div className="flex flex-col items-center mb-8">
@@ -26,44 +27,44 @@ export const LightLogin = () => {
               </svg>
             </div>
             <div className="p-0">
-              <h2 className="text-2xl font-bold text-gray-900 text-center">
-                Welcome Back
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
+                Welcome Back to Aide
               </h2>
-              <p className="text-center text-gray-500 mt-2">
-                Sign in to continue to your account
+              <p className="text-center text-gray-500 dark:text-gray-400 mt-2">
+                Sign in to continue your session.
               </p>
             </div>
           </div>
 
           <div className="space-y-6 p-0">
             <div className="space-y-1">
-              <label className="text-sm font-medium text-gray-700">
-                Email or Phone
+              <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Email
               </label>
               <input
-                className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 h-12 rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500/50 focus:border-blue-500 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                placeholder="Enter your email or phone"
+                className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 h-12 rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500/50 focus:border-blue-500 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="you@example.com"
               />
             </div>
 
             <div className="space-y-1">
               <div className="flex justify-between items-center">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Password
                 </label>
-                <a href="#" className="text-xs text-blue-600 hover:underline">
+                <Link href="#" className="text-xs text-blue-600 hover:underline">
                   Forgot password?
-                </a>
+                </Link>
               </div>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="bg-gray-50 border-gray-200 text-gray-900 pr-12 h-12 rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500/50 focus:border-blue-500 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white pr-12 h-12 rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500/50 focus:border-blue-500 w-full px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="••••••••"
                 />
                 <button
                   type="button"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600 hover:bg-gray-100 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-3"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-3"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? "Hide" : "Show"}
@@ -76,15 +77,15 @@ export const LightLogin = () => {
             </button>
 
             <div className="flex items-center my-4">
-              <div className="flex-1 h-px bg-gray-200"></div>
-              <span className="px-4 text-sm text-gray-400">
+              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
+              <span className="px-4 text-sm text-gray-400 dark:text-gray-500">
                 or continue with
               </span>
-              <div className="flex-1 h-px bg-gray-200"></div>
+              <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700"></div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <button className="h-12 bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg flex items-center justify-center gap-2 border bg-background inline-flex whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+              <button className="h-12 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-blue-600 rounded-lg flex items-center justify-center gap-2 border bg-background inline-flex whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                 <svg
                   width="18"
                   height="18"
@@ -112,17 +113,17 @@ export const LightLogin = () => {
                 <span className="whitespace-nowrap">Google</span>
               </button>
 
-              <button className="h-12 bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-black rounded-lg flex items-center justify-center gap-2 border bg-background inline-flex whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+              <button className="h-12 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-black rounded-lg flex items-center justify-center gap-2 border bg-background inline-flex whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                 <svg
                   width="18"
                   height="18"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="text-gray-700"
+                  className="text-gray-700 dark:text-gray-300"
                 >
                   <path
                     d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.332-1.755-1.332-1.755-1.087-.744.084-.729.084-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.493.997.108-.776.42-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12z"
-                    fill="#24292F"
+                    fill="currentColor"
                   />
                 </svg>
                 <span className="whitespace-nowrap">GitHub</span>
@@ -131,11 +132,11 @@ export const LightLogin = () => {
           </div>
 
           <div className="p-0 mt-6">
-            <p className="text-sm text-center text-gray-500 w-full">
+            <p className="text-sm text-center text-gray-500 dark:text-gray-400 w-full">
               Don&apos;t have an account?{" "}
-              <a href="#" className="text-blue-600 hover:underline font-medium">
+              <Link href="/sign-up" className="text-blue-600 hover:underline font-medium">
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
         </div>

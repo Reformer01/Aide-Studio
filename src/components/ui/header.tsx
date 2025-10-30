@@ -25,19 +25,19 @@ function Header1() {
             description: "Discover what Aide can do for you.",
             items: [
                 {
-                    title: "Weather Information",
-                    href: "/features/weather",
+                    title: "AI Chat",
+                    href: "/features/chat",
                 },
                 {
-                    title: "Document Management",
+                    title: "Document Analysis",
                     href: "/features/documents",
                 },
                 {
-                    title: "Content Creation",
+                    title: "Content Generation",
                     href: "/features/content",
                 },
                 {
-                    title: "Productivity",
+                    title: "Productivity Tools",
                     href: "/features/productivity",
                 },
                 {
@@ -99,8 +99,8 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Button size="sm" className="mt-10">
-                                                            Get Started
+                                                        <Button size="sm" className="mt-10" asChild>
+                                                            <Link href="/sign-up">Start for Free</Link>
                                                         </Button>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
@@ -125,7 +125,7 @@ function Header1() {
                     </NavigationMenu>
                 </div>
                 <div className="flex lg:justify-center">
-                    <p className="font-semibold">Aide</p>
+                    <Link href="/" className="font-semibold">Aide</Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
                     <Button asChild>
