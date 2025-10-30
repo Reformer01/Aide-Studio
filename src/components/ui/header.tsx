@@ -19,7 +19,6 @@ function Header1() {
         {
             title: "Home",
             href: "/",
-            description: "",
         },
         {
             title: "Features",
@@ -42,7 +41,7 @@ function Header1() {
                     href: "/",
                 },
                 {
-                    title: "Loading",
+                    title: "Loading Example",
                     href: "/loading",
                     useLoader: true,
                 },
@@ -87,11 +86,19 @@ function Header1() {
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
                                     {item.href ? (
-                                        <Link href={item.href} legacyBehavior={false} passHref>
-                                            <NavigationMenuLink asChild>
-                                                <Button variant="ghost">{item.title}</Button>
-                                            </NavigationMenuLink>
-                                        </Link>
+                                        item.useLoader ? (
+                                            <LoadingLink href={item.href} legacyBehavior passHref>
+                                                <NavigationMenuLink asChild>
+                                                    <Button variant="ghost">{item.title}</Button>
+                                                </NavigationMenuLink>
+                                            </LoadingLink>
+                                        ) : (
+                                            <Link href={item.href} legacyBehavior={false} passHref>
+                                                <NavigationMenuLink asChild>
+                                                    <Button variant="ghost">{item.title}</Button>
+                                                </NavigationMenuLink>
+                                            </Link>
+                                        )
                                     ) : (
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
@@ -160,13 +167,23 @@ function Header1() {
                                 <div key={item.title}>
                                     <div className="flex flex-col gap-2">
                                         {item.href ? (
-                                            <Link
-                                                href={item.href}
-                                                className="flex justify-between items-center"
-                                            >
-                                                <span className="text-lg">{item.title}</span>
-                                                <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
-                                            </Link>
+                                            item.useLoader ? (
+                                                <LoadingLink
+                                                    href={item.href}
+                                                    className="flex justify-between items-center"
+                                                >
+                                                    <span className="text-lg">{item.title}</span>
+                                                    <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                                                </LoadingLink>
+                                            ) : (
+                                                <Link
+                                                    href={item.href}
+                                                    className="flex justify-between items-center"
+                                                >
+                                                    <span className="text-lg">{item.title}</span>
+                                                    <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                                                </Link>
+                                            )
                                         ) : (
                                             <p className="text-lg">{item.title}</p>
                                         )}
