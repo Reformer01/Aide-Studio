@@ -5,7 +5,6 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { LoadingLink } from "./loading-link";
-import { cn } from "@/lib/utils";
 
 function Header1() {
     const navigationItems = [
@@ -54,7 +53,7 @@ function Header1() {
                 </div>
                 <div className="flex lg:justify-center">
                     <Link href="/" asChild>
-                        <Button variant="link" className="font-semibold">Aide</Button>
+                         <Button variant="link" className="font-semibold">Aide</Button>
                     </Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
@@ -79,11 +78,12 @@ function Header1() {
                                             item.useLoader ? (
                                                 <LoadingLink
                                                     href={item.href}
-                                                    className="flex justify-between items-center"
                                                     onClick={handleLinkClick}
                                                 >
-                                                    <span className="text-lg">{item.title}</span>
-                                                    <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                                                    <div className="flex justify-between items-center">
+                                                      <span className="text-lg">{item.title}</span>
+                                                      <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                                                    </div>
                                                 </LoadingLink>
                                             ) : (
                                                 <Link
