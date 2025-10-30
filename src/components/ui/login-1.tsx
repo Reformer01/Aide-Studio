@@ -1,3 +1,4 @@
+
 'use client'
 
 import * as React from 'react'
@@ -161,6 +162,7 @@ const LoginComponent = () => {
                           );
                         })}
                     </ul>
+                    </div>
                   </div>
                 </div>
                 <div className='grid gap-4 items-center'>
@@ -200,11 +202,9 @@ const LoginComponent = () => {
                 className="w-full h-full object-cover opacity-80"
               />
          </div>
-        </div>
+      </div>
     </div>
   )
 }
 
 export default LoginComponent;
-
-    
