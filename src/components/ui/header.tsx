@@ -93,7 +93,7 @@ function Header1() {
                                                 </NavigationMenuLink>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} legacyBehavior={false} passHref>
+                                            <Link href={item.href} legacyBehavior passHref>
                                                 <NavigationMenuLink asChild>
                                                     <Button variant="ghost">{item.title}</Button>
                                                 </NavigationMenuLink>
@@ -125,7 +125,7 @@ function Header1() {
                                                                     <MoveRight className="w-4 h-4 text-muted-foreground" />
                                                                 </LoadingLink>
                                                             ) : (
-                                                                 <Link href={subItem.href} legacyBehavior={false} passHref key={subItem.title}>
+                                                                 <Link href={subItem.href} legacyBehavior passHref>
                                                                     <NavigationMenuLink
                                                                         className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
                                                                     >
