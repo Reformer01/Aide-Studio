@@ -13,6 +13,8 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { LoadingLink } from "./loading-link";
+import { cn } from "@/lib/utils";
+import { navigationMenuTriggerStyle } from "./navigation-menu";
 
 function Header1() {
     const navigationItems = [
@@ -24,7 +26,7 @@ function Header1() {
             title: "Features",
             href: "/features",
             description: "Discover what Aide can do for you.",
-            useLoader: true, // Apply loader to this link
+            useLoader: true,
             items: [
                 {
                     title: "AI Chat",
@@ -94,15 +96,13 @@ function Header1() {
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} legacyBehavior passHref>
-                                                <NavigationMenuLink asChild>
-                                                    <Button variant="ghost">{item.title}</Button>
-                                                </NavigationMenuLink>
+                                            <Link href={item.href} asChild>
+                                                <Button variant="ghost">{item.title}</Button>
                                             </Link>
                                         )
                                     ) : (
                                         <>
-                                            <NavigationMenuTrigger className="font-medium text-sm">
+                                            <NavigationMenuTrigger>
                                                 <Link href={item.href || '#'}>
                                                     {item.title}
                                                 </Link>
