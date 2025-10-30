@@ -94,7 +94,7 @@ function Header1() {
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} asChild>
+                                            <Link href={item.href}>
                                                 <Button variant="ghost">{item.title}</Button>
                                             </Link>
                                         )
@@ -120,27 +120,20 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Link href="/sign-up" asChild>
+                                                        <Link href="/sign-up">
                                                             <Button size="sm" className="mt-10">Start for Free</Button>
                                                         </Link>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
                                                         {item.items?.map((subItem) => (
-                                                            subItem.useLoader ? (
-                                                                <LoadingLink href={subItem.href} key={subItem.title} className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded">
-                                                                    <span>{subItem.title}</span>
-                                                                    <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                                </LoadingLink>
-                                                            ) : (
-                                                                <Link
-                                                                    href={subItem.href}
-                                                                    key={subItem.title}
-                                                                    className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
-                                                                >
-                                                                    <span>{subItem.title}</span>
-                                                                    <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                                </Link>
-                                                            )
+                                                            <Link
+                                                                href={subItem.href}
+                                                                key={subItem.title}
+                                                                className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
+                                                            >
+                                                                <span>{subItem.title}</span>
+                                                                <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -156,11 +149,11 @@ function Header1() {
                     <Link href="/" className="font-semibold">Aide</Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Link href="/sign-in" asChild>
+                    <Link href="/sign-in">
                       <Button>Sign In</Button>
                     </Link>
                     <div className="border-r hidden md:inline"></div>
-                    <Link href="/sign-up" asChild>
+                    <Link href="/sign-up">
                       <Button>Sign Up</Button>
                     </Link>
                 </div>
@@ -198,31 +191,17 @@ function Header1() {
                                         )}
                                         {item.items &&
                                             item.items.map((subItem) => (
-                                                subItem.useLoader ? (
-                                                    <LoadingLink
-                                                        key={subItem.title}
-                                                        href={subItem.href}
-                                                        className="flex justify-between items-center"
-                                                        onClick={handleLinkClick}
-                                                    >
-                                                        <span className="text-muted-foreground">
-                                                            {subItem.title}
-                                                        </span>
-                                                        <MoveRight className="w-4 h-4 stroke-1" />
-                                                    </LoadingLink>
-                                                ) : (
-                                                    <Link
-                                                        key={subItem.title}
-                                                        href={subItem.href}
-                                                        className="flex justify-between items-center"
-                                                        onClick={handleLinkClick}
-                                                    >
-                                                        <span className="text-muted-foreground">
-                                                            {subItem.title}
-                                                        </span>
-                                                        <MoveRight className="w-4 h-4 stroke-1" />
-                                                    </Link>
-                                                )
+                                                <Link
+                                                    key={subItem.title}
+                                                    href={subItem.href}
+                                                    className="flex justify-between items-center"
+                                                    onClick={handleLinkClick}
+                                                >
+                                                    <span className="text-muted-foreground">
+                                                        {subItem.title}
+                                                    </span>
+                                                    <MoveRight className="w-4 h-4 stroke-1" />
+                                                </Link>
                                             ))}
                                     </div>
                                 </div>
