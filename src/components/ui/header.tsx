@@ -90,12 +90,14 @@ function Header1() {
                                 <NavigationMenuItem key={item.title}>
                                     {item.href && !item.items ? (
                                         item.useLoader ? (
-                                            <LoadingLink href={item.href} asChild>
+                                            <LoadingLink href={item.href}>
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} asChild>
-                                                <Button variant="ghost">{item.title}</Button>
+                                            <Link href={item.href} legacyBehavior passHref>
+                                                <NavigationMenuLink asChild>
+                                                    <Button variant="ghost">{item.title}</Button>
+                                                </NavigationMenuLink>
                                             </Link>
                                         )
                                     ) : (

@@ -8,7 +8,7 @@ import { Slot } from '@radix-ui/react-slot';
 
 type LoadingLinkProps = ComponentProps<typeof Link> & { asChild?: boolean };
 
-export function LoadingLink({ href, onClick, asChild, ...props }: PropsWithChildren<LoadingLinkProps>) {
+export function LoadingLink({ href, onClick, children, asChild, ...props }: PropsWithChildren<LoadingLinkProps>) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,16 +34,15 @@ export function LoadingLink({ href, onClick, asChild, ...props }: PropsWithChild
     );
   }
 
-  const Comp = asChild ? Slot : 'a';
+  const Comp = asChild ? Slot : "a";
 
   return (
     <Link
       href={href}
       {...props}
       onClick={handleClick}
-      legacyBehavior={!asChild}
     >
-      <Comp {...props} />
+      <Comp {...props}>{children}</Comp>
     </Link>
   );
 }
