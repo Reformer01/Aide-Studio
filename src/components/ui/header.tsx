@@ -1,14 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -24,18 +16,15 @@ function Header1() {
         {
             title: "Features",
             href: "/features",
-            description: "Discover what Aide can do for you.",
             useLoader: true,
         },
         {
             title: "Pricing",
             href: "/pricing",
-            description: "Find the perfect plan for your needs.",
         },
         {
             title: "About",
             href: "/about",
-            description: "Learn more about the team and technology behind Aide.",
         },
     ];
 
@@ -49,23 +38,19 @@ function Header1() {
         <header className="w-full z-40 fixed top-0 left-0 bg-background">
             <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center">
                 <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
-                    <NavigationMenu className="flex justify-start items-start">
-                        <NavigationMenuList className="flex justify-start gap-4 flex-row">
-                            {navigationItems.map((item) => (
-                                <NavigationMenuItem key={item.title}>
-                                    {item.useLoader ? (
-                                        <LoadingLink href={item.href} onClick={handleLinkClick} asChild>
-                                            <Button variant="ghost">{item.title}</Button>
-                                        </LoadingLink>
-                                    ) : (
-                                        <Link href={item.href} asChild>
-                                            <Button variant="ghost">{item.title}</Button>
-                                        </Link>
-                                    )}
-                                </NavigationMenuItem>
-                            ))}
-                        </NavigationMenuList>
-                    </NavigationMenu>
+                    {navigationItems.map((item) => (
+                        <div key={item.title}>
+                            {item.useLoader ? (
+                                <LoadingLink href={item.href} asChild>
+                                    <Button variant="ghost">{item.title}</Button>
+                                </LoadingLink>
+                            ) : (
+                                <Link href={item.href} asChild>
+                                    <Button variant="ghost">{item.title}</Button>
+                                </Link>
+                            )}
+                        </div>
+                    ))}
                 </div>
                 <div className="flex lg:justify-center">
                     <Link href="/" asChild>

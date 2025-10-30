@@ -2,18 +2,20 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { ComponentProps, PropsWithChildren, useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import TetrisLoading from './tetris-loader';
 import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/lib/utils';
 
-type LoadingLinkProps = ComponentProps<typeof Link> & { asChild?: boolean, className?: string };
+type LoadingLinkProps = React.ComponentProps<typeof Link> & { 
+  asChild?: boolean;
+};
 
-export function LoadingLink({ href, onClick, children, asChild, className, ...props }: PropsWithChildren<LoadingLinkProps>) {
+const LoadingLink = forwardRef<HTMLAnchorElement, LoadingLinkProps>(({ href, onClick, children, asChild, className, ...props }, ref) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -21,6 +23,7 @@ export function LoadingLink({ href, onClick, children, asChild, className, ...pr
         onClick(e);
     }
 
+    // Simulate loading time before navigation
     setTimeout(() => {
       router.push(href.toString());
       // No need to set isLoading to false, as the component will unmount on navigation
@@ -38,10 +41,14 @@ export function LoadingLink({ href, onClick, children, asChild, className, ...pr
   const Comp = asChild ? Slot : 'a';
 
   return (
-    <Link href={href} onClick={handleClick} {...props} passHref>
+    <Link href={href} onClick={handleClick} {...props} ref={ref} passHref={asChild}>
       <Comp className={cn(className)} {...props}>
           {children}
       </Comp>
     </Link>
   );
-}
+});
+LoadingLink.displayName = "LoadingLink";
+
+
+export { LoadingLink };
