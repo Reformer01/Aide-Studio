@@ -1,7 +1,7 @@
-import LoginComponent from '@/components/ui/login-1';
+import { LightLogin } from "@/components/ui/sign-in"
 
 export default function SignInPage() {
   return (
-    <LoginComponent />
+    <LightLogin />
   );
 }
