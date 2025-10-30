@@ -94,7 +94,7 @@ function Header1() {
                                                 <Button variant="ghost">{item.title}</Button>
                                             </LoadingLink>
                                         ) : (
-                                            <Link href={item.href} passHref>
+                                            <Link href={item.href} asChild>
                                                 <Button variant="ghost">{item.title}</Button>
                                             </Link>
                                         )
@@ -106,7 +106,7 @@ function Header1() {
                                                         {item.title}
                                                     </LoadingLink>
                                                 ) : (
-                                                    <Link href={item.href || '#'} passHref>
+                                                    <Link href={item.href || '#'}>
                                                         {item.title}
                                                     </Link>
                                                 )}
@@ -120,9 +120,9 @@ function Header1() {
                                                                 {item.description}
                                                             </p>
                                                         </div>
-                                                        <Button size="sm" className="mt-10" asChild>
-                                                            <Link href="/sign-up">Start for Free</Link>
-                                                        </Button>
+                                                        <Link href="/sign-up" asChild>
+                                                            <Button size="sm" className="mt-10">Start for Free</Button>
+                                                        </Link>
                                                     </div>
                                                     <div className="flex flex-col text-sm h-full justify-end">
                                                         {item.items?.map((subItem) => (
@@ -156,13 +156,13 @@ function Header1() {
                     <Link href="/" className="font-semibold">Aide</Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button asChild>
-                      <Link href="/sign-in">Sign In</Link>
-                    </Button>
+                    <Link href="/sign-in" asChild>
+                      <Button>Sign In</Button>
+                    </Link>
                     <div className="border-r hidden md:inline"></div>
-                    <Button asChild>
-                      <Link href="/sign-up">Sign Up</Link>
-                    </Button>
+                    <Link href="/sign-up" asChild>
+                      <Button>Sign Up</Button>
+                    </Link>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
                     <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
