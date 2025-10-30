@@ -22,23 +22,24 @@ function Header1() {
         },
         {
             title: "Features",
+            href: "/features",
             description: "Discover what Aide can do for you.",
             items: [
                 {
                     title: "AI Chat",
-                    href: "/",
+                    href: "/features",
                 },
                 {
                     title: "Document Analysis",
-                    href: "/",
+                    href: "/features",
                 },
                 {
                     title: "Content Generation",
-                    href: "/",
+                    href: "/features",
                 },
                 {
                     title: "Productivity Tools",
-                    href: "/",
+                    href: "/features",
                 },
                 {
                     title: "Loading Example",
@@ -54,23 +55,24 @@ function Header1() {
         },
         {
             title: "About",
+            href: "/about",
             description: "Learn more about the team and technology behind Aide.",
             items: [
                 {
                     title: "Our Mission",
-                    href: "/",
+                    href: "/about",
                 },
                 {
                     title: "Team",
-                    href: "/",
+                    href: "/about",
                 },
                 {
                     title: "Careers",
-                    href: "/",
+                    href: "/about",
                 },
                 {
                     title: "Contact Us",
-                    href: "/",
+                    href: "/about",
                 },
             ],
         },
@@ -90,24 +92,24 @@ function Header1() {
                         <NavigationMenuList className="flex justify-start gap-4 flex-row">
                             {navigationItems.map((item) => (
                                 <NavigationMenuItem key={item.title}>
-                                    {item.href ? (
+                                    {item.href && !item.items ? (
                                         item.useLoader ? (
-                                            <NavigationMenuLink asChild>
-                                                <LoadingLink href={item.href}>
-                                                    <Button variant="ghost">{item.title}</Button>
-                                                </LoadingLink>
-                                            </NavigationMenuLink>
+                                            <LoadingLink href={item.href}>
+                                                <Button variant="ghost">{item.title}</Button>
+                                            </LoadingLink>
                                         ) : (
-                                            <NavigationMenuLink asChild>
-                                                <Link href={item.href}>
+                                            <Link href={item.href} legacyBehavior passHref>
+                                                <NavigationMenuLink asChild>
                                                     <Button variant="ghost">{item.title}</Button>
-                                                </Link>
-                                            </NavigationMenuLink>
+                                                </NavigationMenuLink>
+                                            </Link>
                                         )
                                     ) : (
                                         <>
                                             <NavigationMenuTrigger className="font-medium text-sm">
-                                                {item.title}
+                                                <Link href={item.href || '#'} passHref>
+                                                    {item.title}
+                                                </Link>
                                             </NavigationMenuTrigger>
                                             <NavigationMenuContent className="!w-[450px] p-4">
                                                 <div className="flex flex-col lg:grid grid-cols-2 gap-4">
@@ -130,15 +132,14 @@ function Header1() {
                                                                     <MoveRight className="w-4 h-4 text-muted-foreground" />
                                                                 </LoadingLink>
                                                             ) : (
-                                                                <NavigationMenuLink asChild>
-                                                                    <Link
-                                                                        href={subItem.href}
-                                                                        className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
-                                                                    >
-                                                                        <span>{subItem.title}</span>
-                                                                        <MoveRight className="w-4 h-4 text-muted-foreground" />
-                                                                    </Link>
-                                                                </NavigationMenuLink>
+                                                                <Link
+                                                                    href={subItem.href}
+                                                                    key={subItem.title}
+                                                                    className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded"
+                                                                >
+                                                                    <span>{subItem.title}</span>
+                                                                    <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                                                </Link>
                                                             )
                                                         ))}
                                                     </div>
@@ -172,7 +173,7 @@ function Header1() {
                             {navigationItems.map((item) => (
                                 <div key={item.title}>
                                     <div className="flex flex-col gap-2">
-                                        {item.href ? (
+                                        {item.href && !item.items ? (
                                             item.useLoader ? (
                                                 <LoadingLink
                                                     href={item.href}

@@ -59,13 +59,13 @@ function Footerdemo() {
               <Link href="/" className="block transition-colors hover:text-primary">
                 Home
               </Link>
-              <Link href="/" className="block transition-colors hover:text-primary">
+              <Link href="/features" className="block transition-colors hover:text-primary">
                 Features
               </Link>
               <Link href="/pricing" className="block transition-colors hover:text-primary">
                 Pricing
               </Link>
-              <Link href="/" className="block transition-colors hover:text-primary">
+              <Link href="/about" className="block transition-colors hover:text-primary">
                 About
               </Link>
               <Link href="/sign-up" className="block transition-colors hover:text-primary">
@@ -163,7 +163,7 @@ function Footerdemo() {
             <Link href="#" className="transition-colors hover:text-primary">
               Terms of Service
             </Link>
-            <Link href="#" className="block transition-colors hover:text-primary">
+            <Link href="/about" className="block transition-colors hover:text-primary">
               Contact
             </Link>
           </nav>
