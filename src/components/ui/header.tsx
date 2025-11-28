@@ -40,29 +40,29 @@ function Header1() {
                     {navigationItems.map((item) => (
                         <div key={item.title}>
                             {item.useLoader ? (
-                                <LoadingLink href={item.href}>
+                                <LoadingLink href={item.href} asChild>
                                     <Button variant="ghost">{item.title}</Button>
                                 </LoadingLink>
                             ) : (
-                                <Link href={item.href} legacyBehavior passHref>
-                                    <Button asChild variant="ghost"><a>{item.title}</a></Button>
+                                <Link href={item.href} asChild>
+                                    <Button variant="ghost">{item.title}</Button>
                                 </Link>
                             )}
                         </div>
                     ))}
                 </div>
                 <div className="flex lg:justify-center">
-                    <Link href="/" legacyBehavior passHref>
-                         <Button asChild variant="link"><a className="font-semibold">Aide</a></Button>
+                    <Link href="/" asChild>
+                         <Button variant="link" className="font-semibold text-lg">Aide</Button>
                     </Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Link href="/sign-in" legacyBehavior passHref>
-                      <Button asChild><a>Sign In</a></Button>
+                    <Link href="/sign-in" asChild>
+                      <Button>Sign In</Button>
                     </Link>
                     <div className="border-r hidden md:inline"></div>
-                    <Link href="/sign-up" legacyBehavior passHref>
-                      <Button asChild><a>Sign Up</a></Button>
+                    <Link href="/sign-up" asChild>
+                      <Button>Sign Up</Button>
                     </Link>
                 </div>
                 <div className="flex w-12 shrink lg:hidden items-end justify-end">
