@@ -42,17 +42,11 @@ const LoadingLink = forwardRef<HTMLAnchorElement, LoadingLinkProps>(({ href, onC
   
   const Comp = asChild ? Slot : 'a';
 
-  if (asChild && React.isValidElement(children)) {
-    return (
-      <Slot onClick={handleClick} {...props}>
-        {React.cloneElement(children, { ref })}
-      </Slot>
-    );
-  }
-  
   return (
-    <Link href={href} onClick={handleClick} {...props} ref={ref}>
-      {children}
+    <Link href={href} onClick={handleClick} {...props} ref={ref} asChild={asChild}>
+      <Comp>
+        {children}
+      </Comp>
     </Link>
   );
 });
