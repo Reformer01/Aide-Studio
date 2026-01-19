@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, MoveRight, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
-import { LoadingLink } from "./loading-link";
 
 function Header1() {
     const navigationItems = [
@@ -15,7 +14,6 @@ function Header1() {
         {
             title: "Features",
             href: "/features",
-            useLoader: true,
         },
         {
             title: "Pricing",
@@ -39,15 +37,9 @@ function Header1() {
                 <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
                     {navigationItems.map((item) => (
                         <div key={item.title}>
-                            {item.useLoader ? (
-                                <LoadingLink href={item.href} asChild>
-                                    <Button variant="ghost">{item.title}</Button>
-                                </LoadingLink>
-                            ) : (
-                                <Link href={item.href} asChild>
-                                    <Button variant="ghost">{item.title}</Button>
-                                </Link>
-                            )}
+                            <Link href={item.href} asChild>
+                                <Button variant="ghost">{item.title}</Button>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -75,26 +67,14 @@ function Header1() {
                                 <div key={item.title}>
                                     <div className="flex flex-col gap-2">
                                         {item.href && (
-                                            item.useLoader ? (
-                                                <LoadingLink
-                                                    href={item.href}
-                                                    onClick={handleLinkClick}
-                                                >
-                                                    <div className="flex justify-between items-center">
-                                                      <span className="text-lg">{item.title}</span>
-                                                      <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
-                                                    </div>
-                                                </LoadingLink>
-                                            ) : (
-                                                <Link
-                                                    href={item.href}
-                                                    className="flex justify-between items-center"
-                                                    onClick={handleLinkClick}
-                                                >
-                                                    <span className="text-lg">{item.title}</span>
-                                                    <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
-                                                </Link>
-                                            )
+                                            <Link
+                                                href={item.href}
+                                                className="flex justify-between items-center"
+                                                onClick={handleLinkClick}
+                                            >
+                                                <span className="text-lg">{item.title}</span>
+                                                <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                                            </Link>
                                         )}
                                     </div>
                                 </div>
